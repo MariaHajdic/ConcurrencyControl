@@ -34,7 +34,7 @@ public:
 
     void init(int tnum) {
         Transaction t(tnum);
-        running.insert(std::pair<int, Transaction>(tnum, t));
+        running.insert(std::make_pair(tnum, t));
     }
 
     void read(int tnum, int key) {
@@ -132,15 +132,4 @@ int main() {
             printf("Enter valid command\n");
         }
     }
-    // journal.init(1);
-    // journal.init(2);
-    // journal.init(3);
-    // journal.init(4);
-    // journal.write(1,1,15);
-    // journal.write(2,1,3);
-    // journal.commit(2);
-    // journal.commit(1);
-    // journal.read(3,1);
-    // journal.commit(2);
-    // journal.read(4,1);
 }
